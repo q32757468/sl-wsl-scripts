@@ -21,7 +21,7 @@ START_TIME_MS=$(date +%s%3N)
 cleanup() {
     rm -f "$FLAG_FILE"
     end_time_ms=$(date +%s%3N)
-    # echo "sync_claude.sh completed in $((end_time_ms - START_TIME_MS))ms"
+    # echo "sync_files.sh completed in $((end_time_ms - START_TIME_MS))ms"
 }
 trap cleanup EXIT INT TERM
 
