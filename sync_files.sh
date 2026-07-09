@@ -10,7 +10,9 @@ WIN_USER=$(cmd.exe /c "echo %USERNAME%" 2>/dev/null | tr -d '\r')
 # ==============================================
 SYNC_ITEMS="
 /mnt/c/Users/${WIN_USER}/.claude/settings.json:$HOME/.claude/settings.json
-/mnt/c/Users/${WIN_USER}/.claude/skills:$HOME/.claude/skills
+/mnt/c/Users/${WIN_USER}/.codex/auth.json:$HOME/.codex/auth.json
+/mnt/c/Users/${WIN_USER}/.agents/skills:$HOME/.claude/skills
+/mnt/c/Users/${WIN_USER}/.agents/skills:$HOME/.agents/skills
 "
 
 # 标志文件（防止重复执行）
