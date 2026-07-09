@@ -1,17 +1,17 @@
 #!/bin/sh
 set -eu
 
+# 动态获取 Windows 用户名
+WIN_USER=$(cmd.exe /c "echo %USERNAME%" 2>/dev/null | tr -d '\r')
+
 # ==============================================
 # 配置区：只需要修改这里！
 # 格式：每行一个同步项 "Windows源路径:WSL目标路径"
 # ==============================================
 SYNC_ITEMS="
-/mnt/c/Users/\${WIN_USER}/.claude/settings.json:$HOME/.claude/settings.json
-/mnt/c/Users/\${WIN_USER}/.claude/skills:$HOME/.claude/skills
+/mnt/c/Users/${WIN_USER}/.claude/settings.json:$HOME/.claude/settings.json
+/mnt/c/Users/${WIN_USER}/.claude/skills:$HOME/.claude/skills
 "
-
-# 动态获取 Windows 用户名
-WIN_USER=$(cmd.exe /c "echo %USERNAME%" 2>/dev/null | tr -d '\r')
 
 # 标志文件（防止重复执行）
 FLAG_FILE="/tmp/wsl_sync_files.running"
