@@ -6,8 +6,8 @@ set -eu
 # 格式：每行一个同步项 "Windows源路径:WSL目标路径"
 # ==============================================
 SYNC_ITEMS="
-/mnt/c/Users/\${WIN_USER}/.claude/settings.json:\$HOME/.claude/settings.json
-/mnt/c/Users/\${WIN_USER}/.claude/skills:\$HOME/.claude/skills
+/mnt/c/Users/\${WIN_USER}/.claude/settings.json:$HOME/.claude/settings.json
+/mnt/c/Users/\${WIN_USER}/.claude/skills:$HOME/.claude/skills
 "
 
 # 动态获取 Windows 用户名
