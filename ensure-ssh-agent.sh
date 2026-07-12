@@ -1,6 +1,4 @@
 #!/usr/bin/env sh
-set -u
-
 SSH_AGENT_SOCKET="${SSH_AGENT_SOCKET:-$HOME/.ssh/agent.sock}"
 SSH_AGENT_KEY="${SSH_AGENT_KEY:-$HOME/.ssh/id_ed25519}"
 
